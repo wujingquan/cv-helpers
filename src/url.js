@@ -29,16 +29,3 @@ function getQueryFromStr(str, name) {
   var result = decodeURI(str.substr(str.indexOf('?') + 1)).match(reg);
   return result ? decodeURIComponent(result[2]) : null;
 }
-
-function splitArrary (arr, len) {
-  var arrLen = arr.length;
-  var newArr = [];
-  for (var i = 0; i < arrLen; i += len) {
-      newArr.push(arr.slice(i, i + len));
-  }
-  return newArr;
-}
-
-module.exports = {
-  randomUrl
-}
