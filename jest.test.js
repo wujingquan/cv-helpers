@@ -1,4 +1,4 @@
-const { randomUrl } = require('./index')
+import { randomUrl } from './src'
 
 test('haha', () => {
   const dev = true

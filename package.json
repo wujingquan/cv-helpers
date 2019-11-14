@@ -9,6 +9,8 @@
   "author": "i@wujingquan.com",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "jest": "^24.9.0"
   },
   "dependencies": {
