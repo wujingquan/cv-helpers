@@ -1,6 +1,6 @@
-export function randomUrl({ url }) {
+export function randomUrl(url) {
   let random = Math.random().toString().substr(2)
-  let q = queryUrl({ url, query: 'random' })
+  let q = queryUrl(url, 'random')
 
   if (url.includes('?')) {
 
@@ -17,7 +17,7 @@ export function randomUrl({ url }) {
   return url
 }
 
-export function queryUrl({ url, query }) {
+export function queryUrl(url, query) {
   const reg = new RegExp("(^|&)" + query + "=([^&]*)(&|$)")
   const result = url.substr(url.indexOf('?') + 1).match(reg)
   return result ? result[2] : null
