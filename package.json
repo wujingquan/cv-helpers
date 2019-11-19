@@ -1,6 +1,6 @@
 {
   "name": "cv-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Don't do copy and paste !",
   "main": "index.js",
   "scripts": {
