@@ -1,33 +1,24 @@
-export function randomUrl({ url, dev }) {
+export function randomUrl({ url }) {
   let random = Math.random().toString().substr(2)
-  let p = getQueryFromStr(url, 'random')
+  let q = queryUrl({ url, query: 'random' })
 
   if (url.includes('?')) {
 
-    console.log('debug', p)
-    if (p) {
-      url = url.replace(`random=${p}`, `random=${random}`)
+    if (q) {
+      url = url.replace(`random=${q}`, `random=${random}`)
     } else {
       url = url + `&random=${random}`
     }
 
   } else {
-    url = url + '?random' + random
+    url = url + '?random=' + random
   }
 
-  return dev ? { url, random } : url
+  return url
 }
 
-export function getQueryFromHref(name) {
-  const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)")
-  const queryStr = window.location.search.substr(1)
-  const result = decodeURI(queryStr).match(reg)
-
-  return result ? decodeURIComponent(result[2]) : null
-}
-
-export function getQueryFromStr(str, name) {
-  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-  var result = decodeURI(str.substr(str.indexOf('?') + 1)).match(reg);
-  return result ? decodeURIComponent(result[2]) : null;
+export function queryUrl({ url, query }) {
+  const reg = new RegExp("(^|&)" + query + "=([^&]*)(&|$)")
+  const result = url.substr(url.indexOf('?') + 1).match(reg)
+  return result ? result[2] : null
 }
