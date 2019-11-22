@@ -10,12 +10,12 @@
   },
   "author": "i@wujingquan.com",
   "license": "ISC",
-  "bugs":{
+  "bugs": {
     "url": "https://github.com/wujingquan/cv-helpers/issues"
   },
   "repository": {
-		"type": "git",
-		"url": "https://github.com/wujingquan/cv-helpers"
+    "type": "git",
+    "url": "https://github.com/wujingquan/cv-helpers"
   },
   "homepage": "https://github.com/wujingquan/cv-helpers",
   "devDependencies": {
